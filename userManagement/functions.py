@@ -19,7 +19,10 @@ def get_profile_form(user, data = None):
             kurse_list = ast.literal_eval(user.schuelerprofile.kurse)
         else:
             kurse_list = None
-        post_dict = create_dict(data)
+        if data  is not None:
+            post_dict = create_dict(data)
+        else:
+            post_dict = None
         return (SchuelerProfileUpdateForm(post_dict, instance = user.schuelerprofile), kurse_list)
 
     elif lehrer_check.filter(user=user).exists():
