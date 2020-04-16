@@ -77,7 +77,7 @@ class UserAdmin(admin.ModelAdmin):
     search_fields = ('username', 'email')
     ordering = ('username',)
     filter_horizontal = ('groups', 'user_permissions',)
-    actions = ['change_active_action','change_group_lehrer_action','change_group_admin_action','add_group_uploader_action',]
+    actions = ['change_active_action','change_group_lehrer_action','add_group_admin_action','add_group_uploader_action',]
 
     def change_active_action(self, request, queryset):
         rows_updated = queryset.update(is_active = True)
