@@ -40,7 +40,7 @@ def has_profile(redirect_url=None):
                 return view_func(request, *args, **kwargs)
 
             elif redirect_url != None:
-                messages.error(request, 'Du hast kein Profil. Bitte kontaktiere einen Admin!')
+                messages.warning(request, 'Du hast kein Profil. Bitte kontaktiere einen Admin!')
                 return redirect(redirect_url)
             else: 
                 return HttpResponse('Du hast kein Profil. Bitte kontaktiere einen Admin!')
