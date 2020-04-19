@@ -16,8 +16,8 @@ from .vplan_parser import convertPDF
 
 import ast
 
-@allowed_users(allowed_roles=['uploader'], redirect_url='vplan-home')
 @login_required
+@allowed_users(allowed_roles=['uploader'], redirect_url='vplan-home')
 def upload_file(request):
     if request.method == 'POST':
         form = VplanUpdateForm(request.POST, request.FILES)
@@ -52,8 +52,8 @@ def upload_file(request):
         form = VplanUpdateForm()
     return render(request, 'vertretungsplan_webapp/vplan_upload.html', {'form': form})
 
-@has_profile(redirect_url = 'logout')
 @login_required
+@has_profile(redirect_url = 'logout')
 def home(request):
     vplan, vplan_date, vplan_filtered, vplan_a, vplan_a_date, vplan_a_filtered, vplan_l, vplan_l_date, vplan_l_filtered = get_vplan(request.user)
 

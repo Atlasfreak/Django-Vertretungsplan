@@ -45,9 +45,9 @@ def logout(request):
     messages.success(request, 'Sie wurden erfolgreich abgemeldet!')
     return redirect('login')
 
+@login_required
 @has_profile(redirect_url = 'logout')
 @csrf_protect
-@login_required
 def profile(request):
     active_tab = 'username-mail'
 
