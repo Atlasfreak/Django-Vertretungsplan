@@ -5,17 +5,17 @@
 
 {% if filtered is None %}
     {% if lehrer is True %}
-        {% include "vertretungsplan_webapp/home-table-lehrer.html" with list=vplan %}
+        {% include "vertretungsplan_webapp/home-table-lehrer.html" with list=vplan id=id %}
     {% else %}
-        {% include "vertretungsplan_webapp/home-table-schueler.html" with list=vplan %}
+        {% include "vertretungsplan_webapp/home-table-schueler.html" with list=vplan id=id %}
     {% endif %}
 {% else %}
     {% if lehrer is True %}
-        {% include "vertretungsplan_webapp/home-filter-lehrer.html" with filtered=filtered vplan=vplan %}
+        {% include "vertretungsplan_webapp/home-filter-lehrer.html" with filtered=filtered vplan=vplan id=id %}
     {% else %}
-        {% include "vertretungsplan_webapp/home-filter-schueler.html" with filtered=filtered vplan=vplan %}
+        {% include "vertretungsplan_webapp/home-filter-schueler.html" with filtered=filtered vplan=vplan id=id %}
     {% endif %}
-    <button class="text-toggle btn btn-outline-info mb-4" type="button" data-toggle="collapse" data-target="#collapseVplan" aria-expanded="false" aria-controls="collapseVplan">
+    <button class="text-toggle btn btn-outline-info" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
         <span class = "text-collapsed"><i data-feather="chevron-down" height = "19" width="19" stroke-width="3"></i> Mehr Anzeigen</span>
         <span class = "text-expanded"><i data-feather="chevron-up" height = "19" width="19" stroke-width="3"></i> Weniger Anzeigen</span>
     </button>    
