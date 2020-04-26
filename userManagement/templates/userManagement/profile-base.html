@@ -10,10 +10,10 @@
     <div class="row">
         <div class="col-xs-auto col-md-3 mb-4">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link {% if active_tab == 'username-mail' %}active{% endif %}" id="username-mail-tab" data-toggle="pill" href="#username-mail" role="tab" aria-controls="username-mail" aria-selected="true">
+                <a class="nav-link {% if active_tab == 'username-mail' %}shadow active{% endif %}" id="username-mail-tab" data-toggle="pill" href="#username-mail" role="tab" aria-controls="username-mail" aria-selected="true">
                     Nutzername/E-mail
                 </a>
-                <a class="nav-link {% if active_tab == 'change-class' %}active{% endif %}" id="change-class-tab" data-toggle="pill" href="#change-class" role="tab" aria-controls="change-class" aria-selected="true">
+                <a class="nav-link {% if active_tab == 'change-class' %}shadow active{% endif %}" id="change-class-tab" data-toggle="pill" href="#change-class" role="tab" aria-controls="change-class" aria-selected="true">
                     {% if user|has_group:"schueler" %}
                         Klasse/Kurse ändern
                     {% endif %}
@@ -21,7 +21,7 @@
                         Kürzel ändern
                     {% endif %}
                 </a>
-                <a class="nav-link {% if active_tab == 'change-password' %}active{% endif %}" id="change-password-tab" data-toggle="pill" href="#change-password" role="tab" aria-controls="change-password" aria-selected="true">
+                <a class="nav-link {% if active_tab == 'change-password' %}shadow active{% endif %}" id="change-password-tab" data-toggle="pill" href="#change-password" role="tab" aria-controls="change-password" aria-selected="true">
                     Passwort ändern
                 </a>
             </div>
