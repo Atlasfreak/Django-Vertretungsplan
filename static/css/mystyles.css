@@ -22,3 +22,10 @@
 .hidden {
 	display: none;
 }
+/* back to top button */
+#back-to-top {
+	position: fixed;
+	right: 20px;
+	bottom: 30px;
+	z-index: 99;
+}

@@ -35,4 +35,22 @@ $(document).ready(function() {
     $(".show-control").on("input", function(){
         show_field($(this).val());
     });
+    //back to top button
+    var btn = $("button#back-to-top")
+
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 300 ) {
+            //btn.removeClass("hidden");
+            btn.fadeIn();
+        } else {
+            btn.fadeOut();
+        }
+    });
+
+    btn.click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 700);
+        return false;
+    });
 });
