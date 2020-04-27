@@ -55,14 +55,14 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" href="{%url 'profile' %}">Daten ändern</a>
                                         
-                                        {% if user|has_group:"uploader, admin" %}
+                                        {% if user|has_group:"uploader" or user.is_superuser %}
                                             <a class="dropdown-item" href="{%url 'vplan-upload' %}">Vertretungsplan hochladen</a>
                                         {% endif %}
                                         
                                         {% block nav-dropdown %}
                                         {% endblock nav-dropdown %}
                                         
-                                        {% if user.is_staff %}
+                                        {% if user.is_superuser %}
                                             <a class="dropdown-item" href="{%url 'admin:index' %}">Admin Panel</a>
                                         {% endif %}
                                         
